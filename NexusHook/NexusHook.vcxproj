@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SwapChainManager.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
