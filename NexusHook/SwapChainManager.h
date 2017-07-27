@@ -6,12 +6,13 @@
 // Class for finding current Dx11 swapchain
 class SwapChainManager {
 	public:
-		~SwapChainManager();
-
 		bool _stdcall CreateDeviceAndSwapChain();
 		bool FindSwapChain();
+		void ReleaseTempDevices();
 
 		IDXGISwapChain* pSwapChain = nullptr;
+		ID3D11Device* pDevice = nullptr;
+		ID3D11DeviceContext* pContext = nullptr;
 
 
 	private:

@@ -110,6 +110,22 @@ bool SwapChainManager::FindSwapChain() {
 				pSwapChain = (IDXGISwapChain*)pCurrent;
 				std::cout << "Found SwapChain: 0x" << std::hex << pSwapChain << std::endl;
 
+				// Get device
+				if (FAILED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (LPVOID*)&pDevice))) {
+					std::cout << "Failed to get device" << std::endl;
+					return false;
+				}
+
+				// Get Context
+				pDevice->GetImmediateContext(&pContext);
+				if (!pContext) {
+					std::cout << "Failed to get device context" << std::endl;
+					return false;
+				}
+
+				// Release temporary devices
+				ReleaseTempDevices();
+
 				return true;
 			}
 		}
@@ -120,7 +136,7 @@ bool SwapChainManager::FindSwapChain() {
 }
 
 // Release used resources
-SwapChainManager::~SwapChainManager() {
+void SwapChainManager::ReleaseTempDevices() {
 	pTempSwapChain->Release();
 	pTempDevice->Release();
 	pTempContext->Release();
