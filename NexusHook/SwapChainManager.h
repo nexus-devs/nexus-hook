@@ -3,7 +3,6 @@
 #include "Includes.h"
 
 
-
 // Class for finding current Dx11 swapchain
 class SwapChainManager {
 	public:
