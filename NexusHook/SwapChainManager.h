@@ -1,10 +1,7 @@
 #pragma once
 
-#include <Windows.h>
-#include <iostream>
+#include "Includes.h"
 
-#include <d3d11.h>
-#pragma comment(lib, "d3d11.lib")
 
 
 // Class for finding current Dx11 swapchain

@@ -23,5 +23,8 @@
     <ClInclude Include="SwapChainManager.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Includes.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

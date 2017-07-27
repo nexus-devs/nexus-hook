@@ -142,6 +142,7 @@
     <ClCompile Include="DllMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Includes.h" />
     <ClInclude Include="SwapChainManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
