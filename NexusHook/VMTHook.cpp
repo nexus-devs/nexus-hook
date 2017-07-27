@@ -46,7 +46,7 @@ void VMTHook::ReHook() {
 }
 
 // Gets VMT count
-int iGetVMTCount(PDWORD pBase) {
+int VMTHook::iGetVMTCount(PDWORD pBase) {
 	int iCount = 0;
 
 	for (; pBase[iCount]; ++iCount);
