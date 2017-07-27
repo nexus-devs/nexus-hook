@@ -1,4 +1,5 @@
 #include "Includes.h"
+#include "SwapChainManager.h"
 
 
 void InitDll()
@@ -10,6 +11,8 @@ void InitDll()
 	std::cout << "DLL attached" << std::endl;
 
 	// Call hook
+	SwapChainManager hMngr;
+	hMngr.CreateDeviceAndSwapChain();
 }
 
 BOOL WINAPI DllMain(HINSTANCE hModule, DWORD fwdReason, LPVOID lpvReserved) {

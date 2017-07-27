@@ -9,7 +9,7 @@ class SwapChainManager {
 	public:
 		~SwapChainManager();
 
-		bool CreateDeviceAndSwapChain();
+		bool _stdcall CreateDeviceAndSwapChain();
 		bool FindSwapChain();
 
 		IDXGISwapChain* pSwapChain = nullptr;
