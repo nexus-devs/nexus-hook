@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="SwapChainManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Includes.h" />

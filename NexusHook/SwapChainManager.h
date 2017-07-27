@@ -7,7 +7,6 @@
 // Class for finding current Dx11 swapchain
 class SwapChainManager {
 	public:
-		SwapChainManager();
 		~SwapChainManager();
 
 		bool CreateDeviceAndSwapChain();
