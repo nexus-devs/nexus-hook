@@ -35,5 +35,8 @@
     <ClInclude Include="VMTHook.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Dx11Indexes.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
