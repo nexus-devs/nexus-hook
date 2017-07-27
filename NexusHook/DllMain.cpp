@@ -8,11 +8,12 @@ void InitDll()
 	AllocConsole();
 	AttachConsole(GetCurrentProcessId());
 	freopen("CON", "w", stdout);
-	std::cout << "DLL attached" << std::endl;
+	std::cout << "Dll attached" << std::endl;
 
 	// Call hook
 	SwapChainManager hMngr;
 	hMngr.CreateDeviceAndSwapChain();
+	hMngr.FindSwapChain();
 }
 
 BOOL WINAPI DllMain(HINSTANCE hModule, DWORD fwdReason, LPVOID lpvReserved) {

@@ -58,7 +58,64 @@ bool _stdcall SwapChainManager::CreateDeviceAndSwapChain() {
 }
 
 // Finds the current swapchain using our temporary one
+// Main code by smallC from UC
 bool SwapChainManager::FindSwapChain() {
+	
+	// Create SwapChain if it isn't created already
+	if (pSwapChainVtable == nullptr)
+		if (!CreateDeviceAndSwapChain()) return false;
+
+	#ifdef _AMD64_
+	#define _PTR_MAX_VALUE 0x7FFFFFFEFFFF
+		MEMORY_BASIC_INFORMATION64 mbi = { 0 };
+	#else
+	#define _PTR_MAX_VALUE 0xFFE00000
+		MEMORY_BASIC_INFORMATION32 mbi = { 0 };
+	#endif
+
+	// Iterate through memory, For x64 -> 0x10000 ->  0x7FFFFFFEFFFF
+	DWORD_PTR pVtableAddress = NULL;
+	for (DWORD_PTR pMem = 0x10000; pMem < _PTR_MAX_VALUE; pMem = mbi.BaseAddress + mbi.RegionSize) {
+
+		// Iterate memory by using VirtualQuery
+		if (!VirtualQuery(reinterpret_cast<LPCVOID>(pMem), reinterpret_cast<PMEMORY_BASIC_INFORMATION>(&mbi), sizeof(MEMORY_BASIC_INFORMATION)))
+			continue;
+
+		// Filter Regions
+		if (mbi.State != MEM_COMMIT || mbi.Protect == PAGE_NOACCESS || mbi.Protect & PAGE_GUARD)
+			continue;
+
+		// Get length
+		DWORD_PTR len = mbi.BaseAddress + mbi.RegionSize;
+
+		// Iterate through region
+		for (DWORD_PTR pCurrent = mbi.BaseAddress; pCurrent < len; ++pCurrent) {
+			
+			// Try to cast current pointer to Vtable address
+			__try { 
+				pVtableAddress = *(DWORD_PTR*)pCurrent;
+			}
+			__except (1) {
+				continue;
+			}
+
+			// Check if Vtables match
+			if (pVtableAddress == (DWORD_PTR)pSwapChainVtable) {
+
+				// Skip if its our temporary SwapChain
+				if (pCurrent == (DWORD_PTR)pTempSwapChain)
+					continue;
+
+				// Otherwise, set SwapChain
+				pSwapChain = (IDXGISwapChain*)pCurrent;
+				std::cout << "Found SwapChain: 0x" << std::hex << pSwapChain << std::endl;
+
+				return true;
+			}
+		}
+	}
+
+	std::cout << "Couldn't find SwapChain" << std::endl;
 	return false;
 }
 
