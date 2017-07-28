@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="SwapChainManager.cpp" />
     <ClCompile Include="VMTHook.cpp" />
   </ItemGroup>
