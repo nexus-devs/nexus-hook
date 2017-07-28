@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NexusHook", "NexusHook\NexusHook.vcxproj", "{70D36DBE-F472-49AC-8AB2-D27DE161710D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71E9E504-0E1F-43EE-9BFD-90251B8535BE}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		banner.png = banner.png
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

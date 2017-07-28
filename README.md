@@ -1,4 +1,4 @@
-<p align="center">Hooking functionality for video games.</p>
+<p align="center">SwapChain hooking functionality for DirectX11 applications.</p>
 
 ##
 
