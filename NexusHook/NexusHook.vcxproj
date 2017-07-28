@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="NexusHook.cpp" />
     <ClCompile Include="SwapChainManager.cpp" />
     <ClCompile Include="VMTHook.cpp" />
   </ItemGroup>
