@@ -5,7 +5,7 @@
 bool _stdcall SwapChainManager::CreateDeviceAndSwapChain() {
 
 	// Get handle of game
-	HWND hWnd = FindWindow(NULL, "WARFRAME");
+	HWND hWnd = GetForegroundWindow();
 	if (hWnd == NULL) return false;
 
 	// Create SwapChain description
