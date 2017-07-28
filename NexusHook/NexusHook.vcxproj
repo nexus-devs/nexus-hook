@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="Dx11Indexes.h" />
     <ClInclude Include="Includes.h" />
+    <ClInclude Include="NexusHook.h" />
     <ClInclude Include="SwapChainManager.h" />
     <ClInclude Include="VMTHook.h" />
   </ItemGroup>
