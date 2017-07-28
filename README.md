@@ -44,6 +44,7 @@ bool Init();
 >Initializes the hook manager. Returns true on success, false otherwise.
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |
+| None | None | None |
 
 <br>
 
