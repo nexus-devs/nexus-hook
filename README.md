@@ -1,3 +1,4 @@
+[![NexusHook](/banner.png)](https://github.com/nexus-devs)
 <p align="center">SwapChain hooking functionality for DirectX11 applications.</p>
 
 ##
