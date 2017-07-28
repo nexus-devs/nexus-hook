@@ -42,6 +42,7 @@ void main() {
 bool Init();
 ```
 >Initializes the hook manager. Returns true on success, false otherwise.
+
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |
 | None | None | None |
@@ -52,6 +53,7 @@ bool Init();
 bool HookSwapChain(DWORD_PTR newFunc, int index);
 ```
 >Hooks the specified function of the current SwapChain. Returns true on success, false otherwise.
+
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |
 | newFunc | Pointer to your replacement function. | None |
