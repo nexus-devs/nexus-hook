@@ -42,4 +42,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
+    <None Include="..\LICENSE.md" />
+    <None Include="..\README.md" />
+  </ItemGroup>
 </Project>
