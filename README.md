@@ -21,7 +21,7 @@ NexusHook hkMngr;
 // Present hook
 HRESULT __stdcall SwapChainPresentHook(IDXGISwapChain* pThis, UINT SyncInterval, UINT Flags) {
     std::cout << "Hook called!" << std::endl;
-    return (D3D11PresentHook)hkMngr.oFunctions[SC_PRESENT];
+    return ((D3D11PresentHook)hkMngr.oFunctions[SC_PRESENT])(pThis, SyncInterval, Flags);
 }
 
 void main() {
