@@ -18,7 +18,7 @@ bool NexusHook::HookSwapChain(DWORD_PTR newFunc, int index) {
 	hkHooks[index] = VMTHook((PDWORD*)hMngr.pSwapChain);
 
 	// Hook function
-	if (oFunctions[index] = hkHooks[index].Hook(newFunc, SC_PRESENT) == NULL) return false;
+	if ((oFunctions[index] = hkHooks[index].Hook(newFunc, SC_PRESENT)) == NULL) return false;
 
 	return true;
 }
